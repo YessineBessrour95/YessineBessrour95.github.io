@@ -106,6 +106,7 @@ h6 {
 }
 </style>
 
+<link rel="stylesheet" href="styles.css" type="text/css" />
 
 </head>
 
@@ -227,22 +228,28 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    My Projects
+    shinyapps
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Germancredit.html">German Credits</a>
+    </li>
+    <li>
+      <a href="tourism.html">Torism</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    flexdashboard
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="PROJETACP.html">ACP</a>
-    </li>
-    <li>
-      <a href="https://yessinebessrour.shinyapps.io/projet_econometrie2/">German Credits</a>
-    </li>
-    <li>
-      <a href="hotelstunisie.html">Hotels Tunisie</a>
-    </li>
-    <li>
-      <a href="https://yessinebessrour.shinyapps.io/Stage2/">Torism</a>
     </li>
   </ul>
 </li>
@@ -283,8 +290,8 @@ $(document).ready(function () {
 </div>
 
 
-<div id="statistiques-generales" class="section level1">
-<h1>Statistiques générales</h1>
+<div id="statistiques-gnrales" class="section level1">
+<h1>Statistiques g?n?rales</h1>
 <div id="column" class="section level2" data-width="400">
 <h2>Column</h2>
 <div id="acp" class="section level3">
@@ -295,7 +302,7 @@ t2&lt;-t1[,<span class="op">-</span>(<span class="kw">which</span>(<span class="
 t2[<span class="kw">is.na</span>(t2)]&lt;-<span class="dv">0</span>
 t3&lt;-t2[,<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>)]
 acp1&lt;-<span class="kw">PCA</span>(t3,<span class="dt">ncp =</span> <span class="dv">5</span>,<span class="dt">quanti.sup =</span> <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">1</span>),<span class="dt">graph =</span> <span class="ot">FALSE</span>)
-<span class="kw">plot.PCA</span>(<span class="dt">x =</span> acp1,<span class="dt">axes =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="dt">choix =</span> <span class="st">&quot;var&quot;</span>,<span class="dt">title =</span> <span class="st">&quot;Cercle de corrélation&quot;</span>,<span class="dt">col.hab =</span> <span class="kw">rainbow</span>(<span class="dv">20</span>),<span class="dt">col.quanti.sup =</span> <span class="st">&quot;black&quot;</span>)</code></pre></div>
+<span class="kw">plot.PCA</span>(<span class="dt">x =</span> acp1,<span class="dt">axes =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="dt">choix =</span> <span class="st">&quot;var&quot;</span>,<span class="dt">title =</span> <span class="st">&quot;Cercle de corr?lation&quot;</span>,<span class="dt">col.hab =</span> <span class="kw">rainbow</span>(<span class="dv">20</span>),<span class="dt">col.quanti.sup =</span> <span class="st">&quot;black&quot;</span>)</code></pre></div>
 <p><img src="PROJETACP_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fviz_screeplot</span>(acp1)</code></pre></div>
 <p><img src="PROJETACP_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
@@ -305,12 +312,12 @@ acp1&lt;-<span class="kw">PCA</span>(t3,<span class="dt">ncp =</span> <span clas
 </div>
 <div id="column-1" class="section level2" data-width="350">
 <h2>Column</h2>
-<div id="correlations" class="section level3">
-<h3>Corrélations</h3>
+<div id="corrlations" class="section level3">
+<h3>Corr?lations</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggcorr</span>(<span class="dt">data =</span> t3)</code></pre></div>
 <p><img src="PROJETACP_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attach</span>(t3)
-<span class="kw">plot</span>(<span class="dt">x =</span>TPW.<span class="dv">1</span>,<span class="dt">y =</span> FNL1,<span class="dt">xlab =</span> <span class="st">&quot;Totale des points&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Nombre de manches gagnées&quot;</span>)</code></pre></div>
+<span class="kw">plot</span>(<span class="dt">x =</span>TPW.<span class="dv">1</span>,<span class="dt">y =</span> FNL1,<span class="dt">xlab =</span> <span class="st">&quot;Totale des points&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Nombre de manches gagn?es&quot;</span>)</code></pre></div>
 <p><img src="PROJETACP_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dt">x =</span>WNR.<span class="dv">1</span>,<span class="dt">y =</span> UFE.<span class="dv">1</span>,<span class="dt">xlab =</span> <span class="st">&quot;Winners&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Fautes directes&quot;</span>)</code></pre></div>
 <p><img src="PROJETACP_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
@@ -325,8 +332,8 @@ acp1&lt;-<span class="kw">PCA</span>(t3,<span class="dt">ncp =</span> <span clas
 tN1&lt;-tN[,<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>)]
 <span class="kw">rownames</span>(tN1)&lt;-<span class="kw">c</span>(<span class="st">&quot;Tour1&quot;</span>,<span class="st">&quot;Tour2&quot;</span>,<span class="st">&quot;Tour3&quot;</span>,<span class="st">&quot;Tour4&quot;</span>,<span class="st">&quot;1/4final&quot;</span>,<span class="st">&quot;1/2final&quot;</span>,<span class="st">&quot;final&quot;</span>)
 <span class="kw">d3heatmap</span>(tN1,<span class="dt">scale =</span> <span class="st">&quot;column&quot;</span>,<span class="dt">colors =</span> <span class="st">&quot;Blues&quot;</span>,<span class="dt">Rowv =</span> <span class="ot">FALSE</span>,<span class="dt">Colv =</span> <span class="ot">FALSE</span>)</code></pre></div>
-<div id="htmlwidget-6e80941a6dbbc5f88c96" style="width:672px;height:480px;" class="d3heatmap html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6e80941a6dbbc5f88c96">{"x":{"rows":null,"cols":null,"matrix":{"data":["1","62","14","38","6","5","1","13","5","1","1","5","5","30","3","74","45","26","11","7","1","39","19","5","10","11","14","91","3","67","38","33","20","2","0","21","18","6","12","9","13","107","3","71","67","29","14","12","1","36","28","5","8","10","19","129","3","73","66","27","22","3","7","42","47","4","11","32","36","147","3","65","41","35","22","3","1","28","25","4","14","3","10","105","1","78","50","22","10","1","3","19","32","2","6","5","8","88"],"dim":[7,14],"rows":["Tour1","Tour2","Tour3","Tour4","1/4final","1/2final","final"],"cols":["FNL1","FSP.1","FSW.1","SSP.1","SSW.1","ACE.1","DBF.1","WNR.1","UFE.1","BPC.1","BPW.1","NPA.1","NPW.1","TPW.1"]},"image":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAOCAYAAADjXQYbAAABhElEQVQYlQXBT0hTcQDA8e/7vbctdTr2MMY296eD62CpJDw9GHWwpCg6BR7y0ikPO3bp5CmIQKGbYJAQiVAJO4nIYEFEYAtMmERjM2fbTNvmdH/f3q/PR0n9OZeWlLi6bYxE35N48YBXn7Nc9fWg/MhVpV0T2FRBl11l82eBQG83V/wu1FTg3vyH7RyH9TbIDhawsJVGaqAVi2dE70dY/ZKjUK7jdjowBvsp1UyEx+Pkgk0wMzHA0WmD7VQRI9DHNW8fymoyJ2vtDvNvkviDbqZGfQgFMsc1xFJin8SvMooquDXqQ0rJy+fvMMIuRKtpYpoWobCOUKBuWtx+dJeVeAZhd2gUKnUODiqEdAfr8TTTQxfZjcVQ/E8+ypPDPLOzN9g/qvJp+S04etCHDbTByx5eRyf5lq/wdSeP9+Ydnj4coiNBDId1YnvHZP81KZXOWXw8hioUkr+riLnxIGvr36k12mw8mwIg4nby97SBlj45Y8S4xNxEiJ1imVbHomlaXI/o/AeFDJozHqLMVgAAAABJRU5ErkJggg==","theme":null,"options":{"xaxis_height":80,"yaxis_width":120,"xaxis_font_size":null,"yaxis_font_size":null,"brush_color":"#0000FF","show_grid":true,"anim_duration":500}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-707d58bd8dbc21715a1e" style="width:672px;height:480px;" class="d3heatmap html-widget"></div>
+<script type="application/json" data-for="htmlwidget-707d58bd8dbc21715a1e">{"x":{"rows":null,"cols":null,"matrix":{"data":["1","62","14","38","6","5","1","13","5","1","1","5","5","30","3","74","45","26","11","7","1","39","19","5","10","11","14","91","3","67","38","33","20","2","0","21","18","6","12","9","13","107","3","71","67","29","14","12","1","36","28","5","8","10","19","129","3","73","66","27","22","3","7","42","47","4","11","32","36","147","3","65","41","35","22","3","1","28","25","4","14","3","10","105","1","78","50","22","10","1","3","19","32","2","6","5","8","88"],"dim":[7,14],"rows":["Tour1","Tour2","Tour3","Tour4","1/4final","1/2final","final"],"cols":["FNL1","FSP.1","FSW.1","SSP.1","SSW.1","ACE.1","DBF.1","WNR.1","UFE.1","BPC.1","BPW.1","NPA.1","NPW.1","TPW.1"]},"image":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAOCAYAAADjXQYbAAABhElEQVQYlQXBT0hTcQDA8e/7vbctdTr2MMY296eD62CpJDw9GHWwpCg6BR7y0ikPO3bp5CmIQKGbYJAQiVAJO4nIYEFEYAtMmERjM2fbTNvmdH/f3q/PR0n9OZeWlLi6bYxE35N48YBXn7Nc9fWg/MhVpV0T2FRBl11l82eBQG83V/wu1FTg3vyH7RyH9TbIDhawsJVGaqAVi2dE70dY/ZKjUK7jdjowBvsp1UyEx+Pkgk0wMzHA0WmD7VQRI9DHNW8fymoyJ2vtDvNvkviDbqZGfQgFMsc1xFJin8SvMooquDXqQ0rJy+fvMMIuRKtpYpoWobCOUKBuWtx+dJeVeAZhd2gUKnUODiqEdAfr8TTTQxfZjcVQ/E8+ypPDPLOzN9g/qvJp+S04etCHDbTByx5eRyf5lq/wdSeP9+Ydnj4coiNBDId1YnvHZP81KZXOWXw8hioUkr+riLnxIGvr36k12mw8mwIg4nby97SBlj45Y8S4xNxEiJ1imVbHomlaXI/o/AeFDJozHqLMVgAAAABJRU5ErkJggg==","theme":null,"options":{"xaxis_height":80,"yaxis_width":120,"xaxis_font_size":null,"yaxis_font_size":null,"brush_color":"#0000FF","show_grid":true,"anim_duration":500}},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Nad&lt;-<span class="kw">colMeans</span>(tN1[,<span class="dv">2</span><span class="op">:</span><span class="dv">14</span>])
 Nad</code></pre></div>
 <pre><code>##     FSP.1     FSW.1     SSP.1     SSW.1     ACE.1     DBF.1     WNR.1 
@@ -340,8 +347,8 @@ Nad</code></pre></div>
 tF1&lt;-tF[,<span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">20</span>,<span class="dv">21</span>,<span class="dv">22</span>,<span class="dv">23</span>,<span class="dv">24</span>,<span class="dv">25</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">28</span>,<span class="dv">29</span>,<span class="dv">30</span>,<span class="dv">31</span>,<span class="dv">32</span>)]
 <span class="kw">rownames</span>(tF1)&lt;-<span class="kw">c</span>(<span class="st">&quot;Tour1&quot;</span>,<span class="st">&quot;Tour2&quot;</span>,<span class="st">&quot;Tour3&quot;</span>,<span class="st">&quot;Tour4&quot;</span>,<span class="st">&quot;1/4final&quot;</span>,<span class="st">&quot;1/2final&quot;</span>)
 <span class="kw">d3heatmap</span>(tF1,<span class="dt">scale =</span> <span class="st">&quot;column&quot;</span>,<span class="dt">colors =</span> <span class="st">&quot;Reds&quot;</span>,<span class="dt">Rowv =</span> <span class="ot">FALSE</span>,<span class="dt">Colv =</span> <span class="ot">FALSE</span>)</code></pre></div>
-<div id="htmlwidget-ed7a1842ef64d2eb2deb" style="width:672px;height:480px;" class="d3heatmap html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ed7a1842ef64d2eb2deb">{"x":{"rows":null,"cols":null,"matrix":{"data":["3","58","40","42","19","11","5","30","17","4","17","18","22","96","3","76","45","24","9","11","0","52","35","6","11","23","29","103","3","62","39","38","16","6","1","35","18","5","14","11","20","98","3","57","42","43","25","7","1","43","21","3","7","34","41","100","3","64","61","36","28","10","0","54","42","4","17","49","66","147","0","66","45","34","18","8","1","34","50","1","2","23","42","86"],"dim":[6,14],"rows":["Tour1","Tour2","Tour3","Tour4","1/4final","1/2final"],"cols":["FNL2","FSP.2","FSW.2","SSP.2","SSW.2","ACE.2","DBF.2","WNR.2","UFE.2","BPC.2","BPW.2","NPA.2","NPW.2","TPW.2"]},"image":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAOCAYAAAAMn20lAAABSklEQVQYlQXBTSiDcRzA8e//Xxy2NLSmMZOFA3GYJMJBzImLixQrJaHlphx2UYocFHcH5ITESSROimTyEjJ5jcjM7JG1Z/v5fFTM5xXrgB++v7iZXKDEV05o9RQd3A6DowBxFuJp8HCxcYZ33A+ptVkxp4cl5vPKZGauJAPtIu/3QvouJEfOQkktTshBnkviHbWyZXeKSo50iLLZwJYNL8/8nj9gqa9E67pGEhdh0BrtD2CpLkO53GgsViJ3nxib+8jPFzS1Im+vEPN5xdyaF3N6SI7z3XJZUiyptVlR5liXJJ/eyGxpRqIRlN1BZG4Jnbh9IqPYhbG8TvrqmtHeKbJrPOi93TDRnROsPZ3sroToL7WT/v1DhdxFsv8RJyXwmDCZiT9gdLehkoF2UQ4HGHHIyYFoFFVRhd5cOkT3jaIHg2AY/F3eQ5aNf56+lrm1bjnOAAAAAElFTkSuQmCC","theme":null,"options":{"xaxis_height":80,"yaxis_width":120,"xaxis_font_size":null,"yaxis_font_size":null,"brush_color":"#0000FF","show_grid":true,"anim_duration":500}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e4e0abf6c9bc2f961a52" style="width:672px;height:480px;" class="d3heatmap html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e4e0abf6c9bc2f961a52">{"x":{"rows":null,"cols":null,"matrix":{"data":["3","58","40","42","19","11","5","30","17","4","17","18","22","96","3","76","45","24","9","11","0","52","35","6","11","23","29","103","3","62","39","38","16","6","1","35","18","5","14","11","20","98","3","57","42","43","25","7","1","43","21","3","7","34","41","100","3","64","61","36","28","10","0","54","42","4","17","49","66","147","0","66","45","34","18","8","1","34","50","1","2","23","42","86"],"dim":[6,14],"rows":["Tour1","Tour2","Tour3","Tour4","1/4final","1/2final"],"cols":["FNL2","FSP.2","FSW.2","SSP.2","SSW.2","ACE.2","DBF.2","WNR.2","UFE.2","BPC.2","BPW.2","NPA.2","NPW.2","TPW.2"]},"image":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAOCAYAAAAMn20lAAABSklEQVQYlQXBTSiDcRzA8e//Xxy2NLSmMZOFA3GYJMJBzImLixQrJaHlphx2UYocFHcH5ITESSROimTyEjJ5jcjM7JG1Z/v5fFTM5xXrgB++v7iZXKDEV05o9RQd3A6DowBxFuJp8HCxcYZ33A+ptVkxp4cl5vPKZGauJAPtIu/3QvouJEfOQkktTshBnkviHbWyZXeKSo50iLLZwJYNL8/8nj9gqa9E67pGEhdh0BrtD2CpLkO53GgsViJ3nxib+8jPFzS1Im+vEPN5xdyaF3N6SI7z3XJZUiyptVlR5liXJJ/eyGxpRqIRlN1BZG4Jnbh9IqPYhbG8TvrqmtHeKbJrPOi93TDRnROsPZ3sroToL7WT/v1DhdxFsv8RJyXwmDCZiT9gdLehkoF2UQ4HGHHIyYFoFFVRhd5cOkT3jaIHg2AY/F3eQ5aNf56+lrm1bjnOAAAAAElFTkSuQmCC","theme":null,"options":{"xaxis_height":80,"yaxis_width":120,"xaxis_font_size":null,"yaxis_font_size":null,"brush_color":"#0000FF","show_grid":true,"anim_duration":500}},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Fed&lt;-<span class="kw">colMeans</span>(tF1[,<span class="dv">2</span><span class="op">:</span><span class="dv">14</span>])
 Fed</code></pre></div>
 <pre><code>##      FSP.2      FSW.2      SSP.2      SSW.2      ACE.2      DBF.2 
